@@ -16,7 +16,7 @@ const port: Number = 4000
 
 // contoh menggunakan typescript
 app.use("/ganteng", (req:Request, res:Response, next:NextFunction)=>{
-    res.status(500).send({status:"200"});
+    res.status(200).send({status:"200", data:"juan paling ganteng"});
    // res.status(200).send("hello juan ganteng ");
 
 

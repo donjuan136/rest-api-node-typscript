@@ -80,11 +80,39 @@ kenapa kita perlu seperti itu? jika kita bekerja didalam tim diperusahaan tiap o
 
 
 Section 2 - Setup Github & Testing Build
+Setup Github
     masuk ke github terus create new repository 'tutorial rest-api-typescript'
     create new file in base directory '.gitignore'
     fungsi dari gitignore adalah untuk ignore/ pass beberapa file yang tidak ingin di kita masukan ke gitnya
 
-    
+    catatan sebelum push git ke github:
+    melakukan konfigurasi terlebih dahulu
+        git config user.name nama-username-github
+        git config user.email email-user-github
+    jika ingin push ke github pastikan samakan branch dan git pushnya nya
+        contoh jika berada dibranch master lakukan git push origin master
+
+
+    command git
+        git init
+        git add .
+        git commit -m "Initialize Project"
+        git branch -M main
+        git remote add origin https://github.com/donjuan136/rest-api-node-typscript.git
+        git push -u origin main
+        git branch master
+        git branch
+        git checkout nama_branch
+
+Testing Build (mode production)
+coba melakukan build dengan cara
+    npm run build
+    node build/index.js
+
+catatan:
+jadi kita sebelumnya masih dalam tahap development bukan production. nah fungsi dari npm run build yang menghasilkan folder build itu sebagai environment production
+jadi didalam file build terdapat file .js yang artinya typescript yang kita buat dicompile kembali menjadi file javascript
+cara menjalankan hasil build dengan cara node build/index.js
 
 
 
