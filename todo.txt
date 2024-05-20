@@ -1,0 +1,91 @@
+Section 1
+    download 
+        nodejs https://nodejs.org/en
+        GIT https://git-scm.com/
+        typscript https://www.typescriptlang.org/
+        PostMan https://www.postman.com/
+        
+    after install check version
+        git --version (git version 2.32.0.windows.2)
+        node -v (v20.12.2)
+
+    install depedency
+        npm init
+        npm i -D typescript ts-node # disini typescript digunakan hanya untuk keperluan development bukan untuk environtment production/
+        npm i nodemon
+        npm i express
+        npm i -D @types/express
+
+    command run app
+        npm run dev
+
+    configuration typescript
+        npx tsc --init
+        pergi ke tsconfig enable cari moduleResolution
+        pergi ke tsconfig enable cari resolveJsonModule
+        pergi ke tsconfig enable cari sourceMap
+        pergi ke tsconfig enable cari outDir : "build"
+        pergi ke tsconfig enable cari "baseUrl": "."
+        pergi ke tsconfig enable cari "paths": {
+        "*":["node_modules/*"]
+        },
+        pergi ke tsconfig enable cari "typeRoots": ["./src/types",
+        "./node_modules/@types"]
+        pergi ke ts config tambahkan setinggan baru dibawah "compilerOptions" : {
+
+        }, dibaris 113
+        "include": ["src/**/*"],
+        "exclude": ["node_modules/*"]
+
+    create new folder in base directory "src" kemudian buat file baru yaitu index.tsc
+    
+    configuration package.json
+        "scripts": {
+        "start": "npx tsc -w",
+        "dev" :"npx nodemon",
+        "build":"tsc"
+                },
+
+    setup nodemon
+        npm i nodemon
+
+    configuration nodemon.json
+        create new file in base directory type nodemon.json # didalam nodemon ini berupa object
+        {
+            "watch":["src"],
+            "ext":"ts",
+            "exec": "npx ts-node ./src/index.ts"
+        }
+        
+    setup express js
+        npm i express
+        npm i -D @types/express #karena menggunakan typscript kita membutuhkan library tambahan alasannya jika kita menggunakan library dari node tidak bisa langsung support dengan typescript
+                                #@types node selalu memberikan library tambahan yaitu biasanya diawali dengan @types/lalu diikuti oleh nama librarynya contoh @types/express
+ 
+
+Getting Started
+masuk ke file src/index.ts
+untuk mengimport library dinodejs menggunakan const --namalibrary
+    contoh const express = require("express")
+karena saat ini kita menggunakan typescript kita bisa menggunakan cara ini
+    contoh import express from "express";
+
+yang membedakan antara typescript dan javascript adalah typscript memiliki type
+contoh penggunaan typescript
+    import express, {Application} from "express";
+    const app: Application = express();
+    const port: Number = 4000;
+kenapa kita perlu seperti itu? jika kita bekerja didalam tim diperusahaan tiap orang kan beda" yah nanti ada yang menyangkan port ini bukan number
+
+
+
+Section 2 - Setup Github & Testing Build
+    masuk ke github terus create new repository 'tutorial rest-api-typescript'
+    create new file in base directory '.gitignore'
+    fungsi dari gitignore adalah untuk ignore/ pass beberapa file yang tidak ingin di kita masukan ke gitnya
+
+    
+
+
+
+

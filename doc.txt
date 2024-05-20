@@ -1,0 +1,19 @@
+Section 1
+https://www.youtube.com/watch?v=0-Hx_erUJtA&list=PLmF_zPV9ZcP2mvls-O0fHjLpfJ6UUpfbP menit 4:20
+    disini typescript digunakan hanya untuk keperluan development bukan untuk environtment production/
+    typescript digunakan hanya untuk proses development dan dirunning didalam proses development bukan setelah project dibuild atau didalam environtment production
+
+"include": ["src/**/*"], # kemana nih kira" mau disimpan hasil buildnya? nanti seluruh hasil filenya disimpan di config
+"exclude": ["node_modules/*"] # fungsinya kita tidak menggunakan typescript dinodemodulesnya karena node_modules adalah library 3rd party bukan aplikasi kita
+
+setelah selesai konfigurasi typescript kita buat sebuah folder src di base direktori
+
+di package.json ada yang namanya "scripts": {
+    "start": "npx tsc -w", #ketika projectnya selesai dibuild kita bisa menjalankan dengan perintah npx
+    "dev" :"npx nodemon",
+    "build":"tsc"
+  },
+fungsinya untuk menjalankan file program project melalui terminal
+
+Section2
+https://www.toptal.com/developers/gitignore
